@@ -1,0 +1,203 @@
+
+.dashboard-container{
+  padding: 16px 24px;
+}
+.dashboard-content-title{
+  font-size: 16px;
+  margin: 0;
+  font-size: 600;
+}
+
+.total-projects-container {
+  display: flex;
+  gap: 20px;
+  // border: 1px solid green;
+  // width: 800px;
+
+  .project-count-card {
+    display: flex;
+    flex-grow: 1;
+    padding: 12px 12px;
+    // border: 1px solid red;
+    flex-direction: column;
+    align-items: start;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+
+    .icon {
+      // background: #000;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+   
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.bg-green{
+        color: #22c55e;
+        background-color: #f0fdf4;
+      }
+    
+      &.bg-yellow{
+        color: #eab308;
+        background-color: #fefce8;
+      }
+      &.bg-blue{
+        color: #3b82f6;
+        background-color: #eff6ff;
+      }
+    }
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 8;
+      margin-top: 4px;
+      .legend-dot {
+        width: 12px;
+        height: 12px;
+        background-color: red;
+        border-radius: 50px;
+      }
+      .legend-label {
+        font-size: 16px;
+        color: #6b7280;
+      }
+    }
+    .legend-value {
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+  
+    
+
+    
+    .card-1-absolute-1{
+      width: 80px;
+      height: 80px;
+      background: #4ade8018;
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      transform: rotate(45deg);
+    }
+    .card-1-absolute-2{
+      width: 80px;
+      height: 80px;
+      background: #4ade8018;
+      position: absolute;
+      right: -10px;
+      bottom: 20px;
+      transform: rotate(45deg);
+    }
+
+    .card-2-absolute-1{
+      width: 80px;
+      height: 80px;
+      background: #eab30818;
+      position: absolute;
+      right: 20px;
+      bottom: -30px;
+      transform: rotate(45deg);
+    }
+    .card-2-absolute-2{
+      width: 80px;
+      height: 80px;
+      background: #eab30818;
+      position: absolute;
+      right: 50px;
+      bottom: -30px;
+      transform: rotate(45deg);
+    }
+
+    .card-3-absolute-1{
+      width: 80px;
+      height: 80px;
+      background: #bfdbfe59;
+      position: absolute;
+      right: 10px;
+      top: -20px;
+      transform: rotate(45deg);
+    }
+    .card-3-absolute-2{
+      width: 80px;
+      height: 80px;
+      background: #bfdbfe59;
+      position: absolute;
+      right: 50px;
+      top: -30px;
+      transform: rotate(45deg);
+    }
+  }
+
+  .bg-green{
+    background-color: #dcfce7;
+  }
+
+  .bg-yellow{
+    background-color: #fef9c3;
+  }
+  .bg-blue{
+    background-color: #dbeafe;
+  }
+}
+
+.progress-bar-container{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .progress-bar{
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #dbeafe;
+    position: relative;
+    overflow: hidden;
+ 
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background-color: #3b82f6;
+      border-radius: 20px;
+    }
+  }
+  .top-container{
+    font-size: 24px;
+  }
+  .bottom-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    .left, .right{
+      display: flex;
+      flex-direction: column;
+    }
+    .right{
+      align-items: end;
+    }
+    
+  }
+  .lebel{
+    color: #6b7280;
+    font-size: 14px;
+  }
+}
+
+.project-card{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .title{
+    margin: 0;
+    font-size: 16px;
+  }
+}

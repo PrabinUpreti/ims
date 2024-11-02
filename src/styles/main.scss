@@ -1,0 +1,15 @@
+/* Note: Do not define scss here. Only imports are allowed. */
+
+@import './base/fonts';
+@import './base/forms';
+@import './base/layout';
+
+@import './layouts/rootLayout/sidebar';
+@import './layouts/rootLayout/navbar';
+@import './pages/login/login';
+@import './pages/projects/costestimate';
+
+@import './pages/login/forgotpasswordmodal';
+@import './pages/dashboard';
+
+@import './charts/half_donut'

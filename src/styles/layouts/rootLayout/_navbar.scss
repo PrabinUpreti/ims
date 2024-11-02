@@ -1,0 +1,17 @@
+.navbar {
+  padding-left: 38px;
+  padding-right: 38px;
+
+  .logo {
+    width: 176px;
+    word-break: break-word;
+    .logo-text {
+      padding-left: 12px;
+      line-height: 1.1;
+    }
+  }
+
+  .profile-dropdown {
+    cursor: pointer;
+  }
+}

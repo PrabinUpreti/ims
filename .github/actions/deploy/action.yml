@@ -1,0 +1,54 @@
+name: Deploy
+
+inputs:
+  key:
+    required: true
+  user:
+    required: true
+  server:
+    required: true
+  deploy_path:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Get subdomain (push)
+      if: github.event_name == 'push'
+      run: |
+        subdomain=$(echo "${{ github.ref_name }}" | sed 's/\//-/g')
+        echo "SUBDOMAIN=$subdomain" >> $GITHUB_ENV
+      shell: bash
+
+    - name: Set subdomain for PR
+      id: set_subdomain_pr
+      if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
+      run: |
+        subdomain="ims-${{ github.event.pull_request.number }}"
+        echo "SUBDOMAIN=$subdomain" >> $GITHUB_ENV
+      shell: bash
+
+    - name: Create subdomain dir and copy app
+      if: github.event_name == 'push' || github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
+      run: |
+        echo "$KEY" > /tmp/ssh_key
+        chmod 400 /tmp/ssh_key
+        ssh -o StrictHostKeyChecking=No -i /tmp/ssh_key $USER@$SERVER "rm -rf ${DEPLOY_PATH}/${SUBDOMAIN} || true; mkdir ${DEPLOY_PATH}/${SUBDOMAIN}"
+        scp -r -o StrictHostKeyChecking=No -i /tmp/ssh_key $APP_DIR/dist/* $USER@$SERVER:${DEPLOY_PATH}/${SUBDOMAIN}/
+      shell: bash
+      env:
+        KEY: ${{ inputs.key }}
+        USER: ${{ inputs.user }}
+        SERVER: ${{ inputs.server }}
+        DEPLOY_PATH: ${{ inputs.deploy_path }}
+        APP_DIR: ${{github.workspace}}
+
+    - name: Comment on pull request
+      if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'
+      run: |
+        msg="Your app is deployed at https://${SUBDOMAIN}.imsdeploy.dataconstruct.com.np/"
+        echo $msg
+        gh pr comment ${{ github.event.pull_request.number }} --body "${msg}"
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}

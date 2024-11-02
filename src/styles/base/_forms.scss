@@ -1,0 +1,22 @@
+.ant-form-item-explain-error {
+  font-size: 14px; // under review (@ashok)
+}
+
+.switch-green.ant-switch.ant-switch-checked {
+  background-color: #52c41a;
+}
+
+.switch-green.ant-switch-checked:not(.ant-switch-disabled),
+.switch-green.ant-switch-checked:hover:not(.ant-switch-disabled) {
+  background-color: #52c41a;
+}
+
+input.ant-input {
+  padding: 6px 8px;
+}
+.ant-form.ant-form-vertical .ant-col.ant-form-item-label {
+  padding: 0px;
+}
+.ant-form-item-control-input .ant-select {
+  min-height: 38px;
+}

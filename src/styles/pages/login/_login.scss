@@ -1,0 +1,33 @@
+/* Container for the login form */
+.login-container {
+  height: 100vh;
+  // background-color: #e2e8f0;
+
+  .login-box {
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.1);
+    min-width: 440px;
+
+    .logo-container {
+      margin-bottom: 16px;
+
+      .login-system-name {
+        margin-bottom: 0px;
+        font-weight: 500;
+      }
+
+      .login-office-name {
+        margin: 0;
+        font-weight: 400;
+      }
+    }
+
+    .input-icon-height {
+      height: 30px;
+      margin-right: 8px;
+    }
+
+    .custom-forgot-password {
+      float: right;
+    }
+  }
+}

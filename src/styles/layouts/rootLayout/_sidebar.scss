@@ -1,0 +1,14 @@
+.sidebar {
+  padding-top: 20px;
+  align-items: baseline;
+  overflow: auto;
+  height: 100%;
+  ul {
+    padding: 10px;
+  }
+  .toggle {
+    position: absolute;
+    top: 16px;
+    right: -14px;
+  }
+}

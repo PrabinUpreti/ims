@@ -1,0 +1,48 @@
+.chart-half-donut-outer-container{
+  width: 400px;
+  background-color: #fff;
+  padding-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chart-half-donut-container{
+  width: 380px;
+}
+.chart-half-donut{
+  // border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2;
+  // h6{
+  //   font-size: 16px;
+  //   margin: 0;
+  // }
+  .legend{
+    display: flex;
+    align-items: center;
+    gap: 8;
+    margin-top: 4px;
+    .legend-dot{
+      width: 12px;
+      height: 12px;
+      background-color: red;
+      border-radius: 50px;
+    }
+    .legend-label{
+      margin-left: 8px;
+      font-size: 14px;
+      color: #9ca3af;
+    }
+  }
+  .legend-value{
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
